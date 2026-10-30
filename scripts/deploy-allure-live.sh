@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # Publish Allure to GitHub Pages on the company repo.
-# Public URL: https://charchilfromlink2build.github.io/L2B-Vendor-Appium-Automation/
+# Public URL (override with ALLURE_PAGES_BASE): https://rajcharchil.github.io/L2B-Vendor-Appium-Automation/
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
-REPO="${ALLURE_GH_REPO:-charchilfromlink2build/L2B-Vendor-Appium-Automation}"
-PAGES_BASE="${ALLURE_PAGES_BASE:-https://charchilfromlink2build.github.io/L2B-Vendor-Appium-Automation}"
+REPO="${ALLURE_GH_REPO:-Rajcharchil/L2B-Vendor-Appium-Automation}"
+PAGES_BASE="${ALLURE_PAGES_BASE:-https://rajcharchil.github.io/L2B-Vendor-Appium-Automation}"
 LIVE="$ROOT/reports/company-allure/live-git"
 
 if ! gh auth status >/dev/null 2>&1; then

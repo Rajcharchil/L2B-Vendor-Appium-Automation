@@ -1,15 +1,41 @@
+# Build
 target/
+.classpath
+.project
+.settings/
+
+# Allure / reports (generate locally; use scripts/publish-allure.sh for packs)
 allure-results/
 allure-report/
 .allure/
+bin/.allure/
+reports/
+
+# Runtime evidence
 logs/
 screenshots/
-.idea/
-*.iml
-.DS_Store
 *.log
 run.log
-reports/
-# Keep apk/README.md; ignore binary builds dropped locally
+
+# Secrets / local overrides (keep committed config.properties as QA defaults only)
+.env
+.env.*
+*.pem
+*.jks
+*.keystore
+config.local.properties
+**/config.local.properties
+
+# IDE / OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# APK binaries (keep apk/README.md)
 apk/*.apk
 apk/*.aab
+
+# Agent local state
+.claude/settings.local.json
+.cursor/*.log

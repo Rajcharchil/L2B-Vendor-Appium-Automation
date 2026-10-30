@@ -1,0 +1,40 @@
+# Copy to config.properties for local overrides, or use -D / L2B_* env vars.
+# Precedence: -Dkey=value > L2B_KEY env > config.properties
+# Never commit real OTPs, tokens, or production credentials.
+
+execution.target=local
+appium.url=http://127.0.0.1:4723/
+platform.name=Android
+platform.version=16
+device.name=Medium_Phone_API_36.1
+device.udid=emulator-5554
+automation.name=UiAutomator2
+appium.system.port=8200
+
+app.path=apk/app-qa-release.apk
+app.package=com.l2b.app.qa
+app.activity=com.l2b.app.MainActivity
+app.full.reset=false
+
+timeout.implicit=0
+timeout.explicit=20
+timeout.pageload=30
+appium.new.command.timeout=180
+
+screenshot.on.failure=true
+screenshot.dir=screenshots
+
+api.base.url=https://qa.waardian.com
+api.otp.path=/api/v1/auth/send-otp
+api.verify.otp.path=/api/v1/auth/verify-otp
+api.onboarding.status.path=/api/v1/onboarding/status
+
+# QA personas (non-production). Override with L2B_USER_* as needed.
+user.rental.company.phone=9000000001
+user.material.phone=9000000017
+user.rental.individual.phone=9000000003
+user.operator.phone=9000000002
+user.fresh.phone=9000000013
+
+# Supply at runtime only: -Dqa.otp=...... or L2B_QA_OTP
+qa.otp=
