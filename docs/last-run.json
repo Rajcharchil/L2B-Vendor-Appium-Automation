@@ -1,11 +1,11 @@
 {
-  "passed": 22,
-  "failed": 9,
-  "broken": 0,
-  "skipped": 0,
-  "unknown": 0,
-  "total": 31,
-  "when": "2026-10-06T14:47:38+05:30",
-  "source": "KYC dump + L/I/E TestNG on 9000000001",
-  "note": "KYC dump 1/1 PASS. Landing 9/10 PASS (L6 panRow driver timeout). Interact 10/10 PASS. Edge 2/10 PASS (E1/E2); E3\u2013E10 fail Warm Home Language after E2 force-stop (#55). Empty-dash Details filed #54. OTP still 404 (#52)."
+  "passed": 649,
+  "failed": 14,
+  "broken": 7,
+  "skipped": 14,
+  "unknown": 16,
+  "total": 700,
+  "when": "2026-10-06T17:25:00+05:30",
+  "source": "Published Allure summary (historical pack total 700). Live Pages on Rajcharchil may be unset — prefer local target/allure-report or reports/company-allure.",
+  "note": "Dashboard Allure total MUST stay 700 until a new full Allure pack is published. Do not overwrite with a single-module suite count. Local extras (KYC, Tell us, Material Orders, etc.) may not be in that zip yet."
 }

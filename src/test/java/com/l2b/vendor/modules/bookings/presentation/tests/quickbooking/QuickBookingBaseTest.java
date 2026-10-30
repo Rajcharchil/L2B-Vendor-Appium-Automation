@@ -74,6 +74,8 @@ public abstract class QuickBookingBaseTest extends BaseTest {
     protected OtpPage openOtp(String phone) {
         LanguagePage language = new LanguagePage();
         language.waitUntilLoaded();
+        // Language checkbox starts unchecked — Get started is a no-op until a row is selected.
+        language.selectEnglish();
         language.tapGetStarted();
 
         OnboardingCarouselPage carousel = new OnboardingCarouselPage();
