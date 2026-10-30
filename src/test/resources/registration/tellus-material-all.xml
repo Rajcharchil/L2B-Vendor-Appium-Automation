@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="L2B Vendor Tell us Materials all" verbose="1" parallel="none" thread-count="1" preserve-order="true">
+    <listeners>
+        <listener class-name="com.l2b.vendor.environment.TestListener"/>
+    </listeners>
+    <test name="TellUsMat-Dump" preserve-order="true">
+        <classes>
+            <class name="com.l2b.vendor.modules.onboarding.presentation.tests.TellUsMaterialDump"/>
+        </classes>
+    </test>
+    <test name="TellUsMat-Landing" preserve-order="true">
+        <classes>
+            <class name="com.l2b.vendor.modules.onboarding.presentation.tests.TellUsMaterialLandingTest"/>
+        </classes>
+    </test>
+    <test name="TellUsMat-Interact" preserve-order="true">
+        <classes>
+            <class name="com.l2b.vendor.modules.onboarding.presentation.tests.TellUsMaterialInteractTest"/>
+        </classes>
+    </test>
+    <test name="TellUsMat-Edge" preserve-order="true">
+        <classes>
+            <class name="com.l2b.vendor.modules.onboarding.presentation.tests.TellUsMaterialEdgeTest"/>
+        </classes>
+    </test>
+</suite>

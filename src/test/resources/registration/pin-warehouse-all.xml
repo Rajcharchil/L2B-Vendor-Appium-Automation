@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="L2B Vendor Pin warehouse all" verbose="1" parallel="none" thread-count="1" preserve-order="true">
+    <listeners>
+        <listener class-name="com.l2b.vendor.environment.TestListener"/>
+    </listeners>
+    <test name="PinWarehouse-Dump" preserve-order="true">
+        <classes>
+            <class name="com.l2b.vendor.modules.onboarding.presentation.tests.PinWarehouseDump"/>
+        </classes>
+    </test>
+    <test name="PinWarehouse-Landing" preserve-order="true">
+        <classes>
+            <class name="com.l2b.vendor.modules.onboarding.presentation.tests.PinWarehouseLandingTest"/>
+        </classes>
+    </test>
+    <test name="PinWarehouse-Interact" preserve-order="true">
+        <classes>
+            <class name="com.l2b.vendor.modules.onboarding.presentation.tests.PinWarehouseInteractTest"/>
+        </classes>
+    </test>
+    <test name="PinWarehouse-Edge" preserve-order="true">
+        <classes>
+            <class name="com.l2b.vendor.modules.onboarding.presentation.tests.PinWarehouseEdgeTest"/>
+        </classes>
+    </test>
+</suite>

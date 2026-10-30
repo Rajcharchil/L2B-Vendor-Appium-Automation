@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="L2B Vendor Taxation all" verbose="1" parallel="none" thread-count="1" preserve-order="true">
+  <listeners><listener class-name="com.l2b.vendor.environment.TestListener"/></listeners>
+  <test name="Taxation-Dump" preserve-order="true"><classes>
+    <class name="com.l2b.vendor.modules.taxation.presentation.tests.TaxationDump"/>
+  </classes></test>
+  <test name="Taxation-Landing" preserve-order="true"><classes>
+    <class name="com.l2b.vendor.modules.taxation.presentation.tests.TaxationLandingTest"/>
+  </classes></test>
+  <test name="Taxation-Interact" preserve-order="true"><classes>
+    <class name="com.l2b.vendor.modules.taxation.presentation.tests.TaxationInteractTest"/>
+  </classes></test>
+  <test name="Taxation-Edge" preserve-order="true"><classes>
+    <class name="com.l2b.vendor.modules.taxation.presentation.tests.TaxationEdgeTest"/>
+  </classes></test>
+</suite>

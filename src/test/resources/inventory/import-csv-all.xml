@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="L2B Vendor Import CSV all" verbose="1" parallel="none" thread-count="1" preserve-order="true">
+  <listeners><listener class-name="com.l2b.vendor.environment.TestListener"/></listeners>
+  <test name="ImportCsv-Dump" preserve-order="true"><classes>
+    <class name="com.l2b.vendor.modules.inventory.presentation.tests.ImportCsvDump"/>
+  </classes></test>
+  <test name="ImportCsv-Landing" preserve-order="true"><classes>
+    <class name="com.l2b.vendor.modules.inventory.presentation.tests.ImportCsvLandingTest"/>
+  </classes></test>
+  <test name="ImportCsv-Interact" preserve-order="true"><classes>
+    <class name="com.l2b.vendor.modules.inventory.presentation.tests.ImportCsvInteractTest"/>
+  </classes></test>
+  <test name="ImportCsv-Edge" preserve-order="true"><classes>
+    <class name="com.l2b.vendor.modules.inventory.presentation.tests.ImportCsvEdgeTest"/>
+  </classes></test>
+</suite>
