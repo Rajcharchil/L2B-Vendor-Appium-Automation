@@ -14,9 +14,16 @@ Index of where results live. Distinguish **historical** packs from **newly execu
 
 ```bash
 export JAVA_HOME=/opt/homebrew/opt/openjdk@17
+# suiteXmlFile is wired in pom.xml (not ignored by Surefire)
 mvn -DsuiteXmlFile=src/test/resources/<suite>.xml test
 ./report.sh
 allure open target/allure-report
+```
+
+Live Pages (dashboard; large single-file Allure packs are skipped on purpose):
+
+```bash
+./scripts/deploy-pages-git.sh
 ```
 
 `mvn allure:serve` skips history — prefer `./report.sh` when you need the TREND widget.

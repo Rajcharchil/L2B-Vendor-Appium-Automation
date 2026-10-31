@@ -29,14 +29,29 @@ public class MaterialOrdersPage extends SplashScreen {
                 && isPresent(ComposeLocators.textView("Completed"));
     }
 
+    /**
+     * True only for explicit empty-list copy. Tabs alone must NOT count as empty —
+     * that caused F2 false-passes when the list was loading, errored, or still had
+     * non-Confirmed chrome without View More / Get Direction.
+     */
     @Step("Empty / no-card Orders state")
     public boolean isEmptyStateVisible() {
         return isPresent(ComposeLocators.textViewContains("No order"))
                 || isPresent(ComposeLocators.textViewContains("no order"))
                 || isPresent(ComposeLocators.textViewContains("Nothing here"))
                 || isPresent(ComposeLocators.textViewContains("No upcoming"))
-                || (areTabsVisible() && !isViewMoreVisible() && !isGetDirectionVisible()
-                && !isPresent(ComposeLocators.textViewContains("Confirmed")));
+                || isPresent(ComposeLocators.textViewContains("No orders right now"));
+    }
+
+    /** Intermittent load-error chrome (BUGS_FOUND #60) — not a valid empty pass. */
+    @Step("Orders load-error empty")
+    public boolean isLoadErrorVisible() {
+        return isPresent(ComposeLocators.textViewContains("Could not load"))
+                || isPresent(ComposeLocators.textViewContains("Check your connection"))
+                || (areTabsVisible()
+                        && isPresent(ComposeLocators.textView("Retry"))
+                        && !isCardChromeVisible()
+                        && !isEmptyStateVisible());
     }
 
     @Step("Tabs")

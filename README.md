@@ -99,6 +99,7 @@ Or manually:
 mvn test && ./report.sh
 # isolated suite:
 mvn -DsuiteXmlFile=src/test/resources/orders/material-orders-all.xml test
+# equivalent: -Dsurefire.suiteXmlFiles=...
 ```
 
 Default `src/test/resources/testng.xml` is the committed smoke path (Splash → Language → onboarding Smoke → Carousel → SignUp).  

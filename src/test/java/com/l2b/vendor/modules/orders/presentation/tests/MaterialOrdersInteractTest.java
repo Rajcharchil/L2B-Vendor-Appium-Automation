@@ -78,11 +78,17 @@ public class MaterialOrdersInteractTest extends MaterialSurfaceBaseTest {
     @Test(priority=8, description="MO-I8: card chrome or empty after reopen") @Severity(SeverityLevel.NORMAL)
     public void cards() {
         MaterialOrdersPage page = reachOrdersWithCardsIfAny();
+        assertThat(page.isLoadErrorVisible())
+                .as("MO-I8: load-error is bug #60, not a pass")
+                .isFalse();
         assertThat(page.isCardChromeVisible() || page.isEmptyStateVisible()).isTrue();
     }
     @Test(priority=9, description="MO-I9: View More or empty") @Severity(SeverityLevel.NORMAL)
     public void viewMore() {
         MaterialOrdersPage page = reachOrdersWithCardsIfAny();
+        assertThat(page.isLoadErrorVisible())
+                .as("MO-I9: load-error is bug #60, not a pass")
+                .isFalse();
         assertThat(page.isViewMoreVisible() || page.isEmptyStateVisible()).isTrue();
     }
     @Test(priority=10, description="MO-I10: package") @Severity(SeverityLevel.NORMAL)

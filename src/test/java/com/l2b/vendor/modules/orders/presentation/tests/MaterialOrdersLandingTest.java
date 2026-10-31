@@ -17,16 +17,25 @@ public class MaterialOrdersLandingTest extends MaterialSurfaceBaseTest {
     @Test(priority=3, description="MO-L3: card chrome or empty") @Severity(SeverityLevel.CRITICAL)
     public void cards() {
         MaterialOrdersPage page = reachOrdersWithCardsIfAny();
+        assertThat(page.isLoadErrorVisible())
+                .as("MO-L3: load-error is bug #60, not a pass for card/empty")
+                .isFalse();
         assertThat(page.isCardChromeVisible() || page.isEmptyStateVisible()).isTrue();
     }
     @Test(priority=4, description="MO-L4: Get Direction or empty") @Severity(SeverityLevel.CRITICAL)
     public void getDirection() {
         MaterialOrdersPage page = reachOrdersWithCardsIfAny();
+        assertThat(page.isLoadErrorVisible())
+                .as("MO-L4: load-error is bug #60, not a pass")
+                .isFalse();
         assertThat(page.isGetDirectionVisible() || page.isEmptyStateVisible()).isTrue();
     }
     @Test(priority=5, description="MO-L5: View More Details or empty") @Severity(SeverityLevel.CRITICAL)
     public void viewMore() {
         MaterialOrdersPage page = reachOrdersWithCardsIfAny();
+        assertThat(page.isLoadErrorVisible())
+                .as("MO-L5: load-error is bug #60, not a pass")
+                .isFalse();
         assertThat(page.isViewMoreVisible() || page.isEmptyStateVisible()).isTrue();
     }
     @Test(priority=6, description="MO-L6: Help") @Severity(SeverityLevel.NORMAL)

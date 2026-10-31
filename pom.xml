@@ -28,6 +28,8 @@
         <surefire.plugin.version>3.5.6</surefire.plugin.version>
         <compiler.plugin.version>3.15.0</compiler.plugin.version>
         <allure.results.dir>${project.build.directory}/allure-results</allure.results.dir>
+        <!-- Override: mvn -DsuiteXmlFile=src/test/resources/orders/material-orders-all.xml test -->
+        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
     </properties>
 
     <dependencyManagement>
@@ -103,7 +105,7 @@
                 <version>${surefire.plugin.version}</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"

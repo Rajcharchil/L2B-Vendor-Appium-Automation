@@ -10,8 +10,10 @@ Honest record of how AI tools support this Appium automation repo. Do not treat 
 | **Claude Code** (`claude` CLI) | Optional deep repo analysis, refactors, and debugging when authenticated |
 | **Human** | Reviews locators, approves pushes, validates device runs, owns bug severity |
 
-Installed Claude Code version checked during professionalization (2026-10-30): **2.1.314**.  
-A non-interactive `claude -p` probe failed with **OAuth session expired** — so Claude Code was **not** used to generate code or reports in that session. Re-auth (`claude` login) is required before claiming Claude Code executions.
+Installed Claude Code version checked during professionalization (2026-10-30) and again 2026-10-31: **2.1.314**.  
+Non-interactive `claude -p` still fails with **OAuth session expired** — Claude Code was **not** used to generate code or reports. Re-auth locally: `claude auth login` (interactive).  
+
+`gh` keyring tokens for Rajcharchil are also invalid — Pages API enable needs `gh auth login` or a one-time GitHub UI click (Settings → Pages → `gh-pages`).
 
 ## How work usually flows
 
